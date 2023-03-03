@@ -1,0 +1,132 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background: black;
+}
+.container
+{
+    height: 500px;
+    width: 500px;
+    position: relative;
+}
+.container img
+{
+    position:absolute;
+    height:100%;
+    width:100%;
+    margin-top:-100px; 
+}
+.container label
+{
+    position:absolute;
+    bottom:15%;
+    left:40%; 
+    transform:translate(0%);
+}
+.container label span
+{
+    color: #fcf8f8;
+    font-size:20px;
+    transform: uppercase;
+    border: 2px solid #fdfafa;
+    width: 100px;
+    height: 40px;
+    border-radius: 0px;
+    text-align:center;
+    cursor: pointer;
+    transition:all 0.3s ease;
+}
+.container label span:before
+{
+    content:""; 
+
+}
+.container label span:hover
+{
+    background-color:#fff;
+    color:#070707;
+} 
+.container img#bulb-on
+{
+    opacity: 1.0;
+    animation:glow 10s linear infinite;
+    transform: rotate(0deg);
+}
+.container img#bulb-off
+{
+    opacity: 1.0;
+    animation:glow 10s linera infinite;
+}
+@keyframes glow 
+{
+    0%
+    {
+        opacity: 0;
+    }
+    5%
+    {
+        opacity: 0;
+    }
+    25%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }   
+    70%
+    {
+        opacity: 1;
+    }
+    75%
+    {
+        opacity: 1;
+    }
+    80%
+    {
+        opacity: 0;
+    }
+    85%
+    {
+        opacity: 1;
+    }
+    90%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+
+}
+#btn:checked ~ img#bulb-on
+{
+    animation:none;
+}
+.btn:checked ~ label span:before
+{
+    content:"Turn on";
+}
+.btn:checked ~ label span:after
+{
+    content:"turn off";
+}
+#btn:checked ~ img#bulb-off
+{
+    animation:none;
+}
+.container input
+{
+    display:none;
+}
